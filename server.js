@@ -1,23 +1,22 @@
-const express = require('express');
-const SocketServer = require('ws').Server;
-const path = require('path');
+//import class
+var User = require('./game').User;
+var GameRoom = require('./game').GameRoom;
 
-const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, 'index.html');
+//server code
+var port = 8000;
+var WebSocketServer = require('ws').Server;
+var server = new WebSocketServer({port: port});
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
-const wss = new SocketServer({ server });
-
-wss.on('connection', (ws) => {
-  console.log('Client connected');
-  ws.on('close', () => console.log('Client disconnected'));
+var room1 = new GameRoom();
+server.on('connection', function(socket)
+{
+	var user = new User(socket);
+	room1.addUser(user);
+	console.log("A connection established");
+	var message = "Welcome " + user.id + " joining the party. Total connection: " + room1.users.length;
 });
 
-setInterval(() => {
-  wss.clients.forEach((client) => {
-    client.send(new Date().toTimeString());
-  });
-}, 1000);
+console.log("WebSocket server is running.");
+console.log("Listening to port " + port + ".");
+
+//te amo mucho

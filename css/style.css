@@ -1,0 +1,12 @@
+canvas
+{
+	position: relative;
+	border: 1px solid #999999;
+	background: rgba(0,0,150,.2);
+}
+#chat-history
+{
+	background: rgba(0,150,250,.2);
+	border: 1px solid #999999;
+}
+/*te amo mucho

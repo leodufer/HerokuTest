@@ -1,13 +1,21 @@
-<html>
-  <body>
-    <p id='server-time'></p>
-    <script>
-      var HOST = location.origin.replace(/^http/, 'ws')
-      var ws = new WebSocket(HOST);
-      var el = document.getElementById('server-time');
-      ws.onmessage = function (event) {
-        el.innerHTML = 'Server time: ' + event.data;
-      };
-    </script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Basic server client connection with websockets.">
+	<meta name="keywords" content="server, client, websocket">
+	<title>WebSocket Connection</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--Game elements goes here later-->
+<canvas id="drawing-pad" width="500" height="400"></canvas>
+<input type="text" id="chat-input" autocomplete="off">
+<input type="button" value="Send" id="send">
+<input type="button" value="Restart" id="restart">
+<ul id="chat-history"></ul>
+<!--scripts-->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/html5games.websocket.js"></script>
+</body>
 </html>
