@@ -1,0 +1,29 @@
+{
+  "name": "HerokuTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VicenteFleitas/HerokuTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VicenteFleitas/HerokuTest/issues"
+  },
+  "homepage": "https://github.com/VicenteFleitas/HerokuTest#readme",
+  "engines": {
+    "node": "6.2.0"
+  },
+  "dependencies": {
+    "bufferutil": "3.0.1",
+    "express": "4.15.3",
+    "utf-8-validate": "3.0.2",
+    "ws": "3.0.0"
+  }
+}
