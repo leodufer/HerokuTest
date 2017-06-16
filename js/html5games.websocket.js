@@ -30,7 +30,8 @@ $(function()
 	if(window["WebSocket"])
 	{
 		//create connection
-		websocketGame.socket = new WebSocket("ws://127.0.0.1:8000");
+		var HOST = location.origin.replace(/^http/, 'ws')
+      	websocketGame.socket = new WebSocket(HOST);
 		//on open event
 		websocketGame.socket.onopen = function(e)
 		{

@@ -3,12 +3,21 @@ var User = require('./game').User;
 var GameRoom = require('./game').GameRoom;
 
 //server code
-var port = 8000;
-var WebSocketServer = require('ws').Server;
-var server = new WebSocketServer({port: port});
+const express = require('express');
+const SocketServer = require('ws').Server;
+const path = require('path');
+
+const PORT = process.env.PORT || 3000;
+const INDEX = path.join(__dirname, 'index.html');
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX) )
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+const serverr = new SocketServer({ server });
 
 var room1 = new GameRoom();
-server.on('connection', function(socket)
+serverr.on('connection', function(socket)
 {
 	var user = new User(socket);
 	room1.addUser(user);
@@ -17,6 +26,6 @@ server.on('connection', function(socket)
 });
 
 console.log("WebSocket server is running.");
-console.log("Listening to port " + port + ".");
+console.log("Listening to port " + PORT + ".");
 
 //te amo mucho
