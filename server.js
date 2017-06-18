@@ -1,3 +1,5 @@
+'use strict';
+
 //import class
 var User = require('./game').User;
 var GameRoom = require('./game').GameRoom;
@@ -27,6 +29,5 @@ serverr.on('connection', function(socket)
 
 console.log("WebSocket server is running.");
 console.log("Listening to port " + PORT + ".");
-console.log("path: " + INDEX);
 
 //te amo mucho
