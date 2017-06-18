@@ -1,5 +1,3 @@
-'use strict';
-
 //import class
 var User = require('./game').User;
 var GameRoom = require('./game').GameRoom;
