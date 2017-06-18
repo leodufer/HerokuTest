@@ -26,11 +26,5 @@
     "express": "4.15.3",
     "utf-8-validate": "3.0.2",
     "ws": "3.0.0"
-  },
-  "hooks": { 
-    "grunt": false 
-  },
-  "paths": {
-    "public": "js"
   }
 }
