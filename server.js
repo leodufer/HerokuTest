@@ -27,5 +27,6 @@ serverr.on('connection', function(socket)
 
 console.log("WebSocket server is running.");
 console.log("Listening to port " + PORT + ".");
+console.log("LocalPath: " + __dirname);
 
 //te amo mucho
